@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-primary  py-6 outline">
+    <footer className="bg-gray-primary  py-6">
       <div className="container mx-auto flex flex-col items-center justify-between md:flex-row">
         <div className="text-sm">
           &copy; {new Date().getFullYear()} Your Company. All rights reserved.

@@ -8,7 +8,12 @@ type CardProps = {
 
 function Card({ children, classes }: CardProps) {
   return (
-    <div className={classNames("bg-white p-4 shadow-lg", classes?.card)}>
+    <div
+      className={classNames(
+        "bg-white p-4 shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg",
+        classes?.card
+      )}
+    >
       {children}
     </div>
   );

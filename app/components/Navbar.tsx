@@ -9,6 +9,7 @@ import { IoMdClose } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { usePathname } from "next/navigation";
 import barraBeachIcon from "@/public/barra-beach.webp";
+import { useScrollPosition } from "../hooks/useScrollPosition";
 
 type NavbarProps = {
   classes?: {
@@ -138,32 +139,42 @@ const Navigation: React.FC<{
   );
 };
 
-const Navbar: React.FC<NavbarProps> = ({ classes }) => (
-  <header className={classNames("shadow-md", classes?.wrapper)}>
-    <Container
-      classes={{
-        container: classNames(
-          "flex items-center justify-between w-full h-24",
-          classes?.container
-        ),
-      }}
+const Navbar: React.FC<NavbarProps> = ({ classes }) => {
+  const scrollPosition = useScrollPosition();
+
+  return (
+    <header
+      className={classNames(
+        "fixed transition duration-300 ease-in-out z-10 w-full",
+        classes?.wrapper,
+        scrollPosition > 100 ? "bg-white/20 shadow-md" : "bg-transparent"
+      )}
     >
-      <Link href="/" className="w-40 lg:w-80">
-        <Image
-          src={barraBeachIcon.src}
-          width={barraBeachIcon.width}
-          height={barraBeachIcon.height}
-          className="w-20 h-20"
-          alt="Logo"
+      <Container
+        classes={{
+          container: classNames(
+            " top-0 flex items-center justify-between w-full h-24",
+            classes?.container
+          ),
+        }}
+      >
+        <Link href="/" className="w-40 lg:w-80">
+          <Image
+            src={barraBeachIcon.src}
+            width={barraBeachIcon.width}
+            height={barraBeachIcon.height}
+            className="w-20 h-20"
+            alt="Logo"
+          />
+        </Link>
+        <Navigation
+          navigation={mockNavigation}
+          subNavigation={mockSubNavigation}
         />
-      </Link>
-      <Navigation
-        navigation={mockNavigation}
-        subNavigation={mockSubNavigation}
-      />
-      <MobileMenu navigation={mockNavigation} />
-    </Container>
-  </header>
-);
+        <MobileMenu navigation={mockNavigation} />
+      </Container>
+    </header>
+  );
+};
 
 export default Navbar;

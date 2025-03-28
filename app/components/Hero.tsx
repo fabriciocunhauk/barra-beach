@@ -46,7 +46,7 @@ function Hero({
       <Container
         classes={{
           container: classNames(
-            "grid grid-cols-1 xl:grid-cols-2 place-items-center text-center xl:text-left text-white min-h-[212px] lg:h-[550px] z-10",
+            "grid grid-cols-1 xl:grid-cols-2 place-items-center text-center xl:text-left text-white min-h-[212px] lg:h-[900px]",
             classes?.container
           ),
         }}
