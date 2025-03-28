@@ -27,10 +27,10 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning={true} data-lt-installed={true}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col justify-between h-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
-        <main>{children}</main>
+        {children}
         <Footer />
       </body>
     </html>
