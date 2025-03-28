@@ -27,7 +27,7 @@ function Hero({
   return (
     <section
       className={classNames(
-        "relative flex items-center justify-center w-full bg-gray-primary overflow-hidden py-20",
+        "relative flex items-center justify-center w-full overflow-hidden py-20",
         classes?.wrapper
       )}
     >

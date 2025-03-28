@@ -21,7 +21,7 @@ const CarouselButton: FC<CarouselButtonProps> = ({
 }) => (
   <button
     className={classNames(
-      "flex items-center justify-center border border-red-primary text-red-primary bg-white hover: hover:bg-gray-primary/70 rounded-full min-w-10 h-10 bg-opacity-75 hover:bg-opacity-75 transition duration-150",
+      "flex items-center justify-center border bg-white rounded-full min-w-10 h-10 bg-opacity-75 hover:bg-opacity-75 transition duration-150",
       disabled && "pointer-events-none opacity-10"
     )}
     disabled={disabled}

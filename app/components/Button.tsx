@@ -20,7 +20,7 @@ const Button: FC<ButtonProps> = ({
   disabled,
 }) => {
   const baseClasses =
-    "flex items-center justify-center bg-red-primary hover:bg-gray-primary/70 rounded-full transition ease-in-out duration-150 w-40 h-12";
+    "flex items-center justify-center hover:bg-white rounded-full transition ease-in-out duration-150 w-40 h-12";
 
   const linkClasses = classNames(baseClasses, classes?.link);
   const buttonClasses = classNames(

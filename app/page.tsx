@@ -2,8 +2,9 @@ import Image from "next/image";
 import Hero from "./components/Hero";
 import beachVolley from "@/public/beach-volley.jpg";
 import volleyBall from "@/public/volley-ball.jpg";
-import restaurant from "@/public/barra-beach-restaurant.jpeg"; // Add a new image for the restaurant section
-import swimmingPool from "@/public/swimming-pool.jpg"; // Add a new image for the swimming pool section
+import restaurant from "@/public/barra-beach-restaurant.jpeg";
+import swimmingPool from "@/public/swimming-pool.jpg";
+import balls from "@/public/balls.jpg";
 import Card from "./components/Card";
 
 const features = [
@@ -261,9 +262,9 @@ export default function Home() {
 
       {/* Call-to-Action Section */}
       <section
-        className="py-20 bg-gradient-to-r from-blue-600 to-indigo-600 text-white"
+        className="py-20 bg-gradient-to-r from-blue-600 to-indigo-600 text-white h-[450px]"
         style={{
-          backgroundImage: `url(${beachVolley.src})`,
+          backgroundImage: `url(${balls.src})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
