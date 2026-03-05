@@ -62,10 +62,10 @@ const Gastrobar = () => {
                 className="space-y-4"
               >
                 <div className="h-72 rounded-[40px] overflow-hidden border-2 border-white/10 relative">
-                  <Image src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=600&q=80" alt="Meat" fill className="object-cover" />
+                  <Image src="/caipirinha-de-morango.png" alt="Drink de Morando" fill className="object-cover" />
                 </div>
                 <div className="h-56 rounded-[40px] overflow-hidden border-2 border-white/10 relative">
-                  <Image src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=600&q=80" alt="Beer" fill className="object-cover" />
+                  <Image src="/chopp.png" alt="Caipirinha de Limão" fill className="object-cover" />
                 </div>
               </motion.div>
               <motion.div 
@@ -75,10 +75,10 @@ const Gastrobar = () => {
                 className="space-y-4 pt-12"
               >
                 <div className="h-56 rounded-[40px] overflow-hidden border-2 border-white/10 relative">
-                  <Image src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80" alt="Drink" fill className="object-cover" />
+                  <Image src="/porcao.png"  alt="Drink de Maracujá" fill className="object-cover" />
                 </div>
                 <div className="h-72 rounded-[40px] overflow-hidden border-2 border-white/10 relative">
-                  <Image src="https://images.unsplash.com/photo-1544124499-58912cbddaad?auto=format&fit=crop&w=600&q=80" alt="Food" fill className="object-cover" />
+                  <Image src="/chopp-gelado.png" alt="Porção Barra Beach" fill className="object-cover" />
                 </div>
               </motion.div>
             </div>

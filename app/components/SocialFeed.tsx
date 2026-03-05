@@ -9,14 +9,14 @@ const INSTAGRAM_HANDLE = "barrabeacharena";
 const INSTAGRAM_LINK = `https://www.instagram.com/${INSTAGRAM_HANDLE}/`;
 
 const posts = [
-  { img: "https://images.unsplash.com/photo-1519766304817-4f37bda74a26?auto=format&fit=crop&w=400&q=80", type: "sports" },
-  { img: "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=400&q=80", type: "beer" },
-  { img: "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=400&q=80", type: "food" },
-  { img: "https://images.unsplash.com/photo-1544919982-b61976f0ba43?auto=format&fit=crop&w=400&q=80", type: "sports" },
-  { img: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=400&q=80", type: "drink" },
-  { img: "https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?auto=format&fit=crop&w=400&q=80", type: "sports" },
-  { img: "https://images.unsplash.com/photo-1544124499-58912cbddaad?auto=format&fit=crop&w=400&q=80", type: "food" },
-  { img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80", type: "vibe" },
+  { img: "/gastrobar.png", type: "sports" },
+  { img: "/chopp.png", type: "beer" },
+  { img: "/caipirinha-bar.png", type: "drink" },
+  { img: "/comida.png", type: "/food" },
+  { img: "/saque.png", type: "sports" },
+  { img: "/caipirinha-de-maracuja.png", type: "drink" },
+  { img: "/porcao.png", type: "food" },
+  { img: "/campeonato.png", type: "vibe" },
 ];
 
 const SocialFeed = () => {

@@ -11,16 +11,22 @@ const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Olá! Gostaria de r
 const INSTAGRAM_HANDLE = "barrabeacharena";
 const INSTAGRAM_LINK = `https://www.instagram.com/${INSTAGRAM_HANDLE}/`;
 
+const images = [
+  {id:0, img: "/barra-beach-restaurant.jpeg", alt: "Barra Beach Vibe"},
+  {id:1, img: "/time.png", alt: "Barra Beach Vibe"},
+  {id:2, img: "/voley-de-areia.png", alt: "Barra Beach Vibe"},
+];
+
 const Hero = () => {
   return (
     <section id="home" className="relative h-[90vh] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image 
-          src="https://images.unsplash.com/photo-1519766304817-4f37bda74a26?auto=format&fit=crop&w=1920&q=80" 
+          src="/barra-beach-restaurant-front.jpeg" 
           alt="Barra Beach Vibe" 
           fill
           priority
-          className="object-cover"
+          className="object-cover object-bottom"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-beach-sand via-black/40 to-black/60"></div>
       </div>
@@ -63,11 +69,11 @@ const Hero = () => {
       <div className="absolute bottom-12 left-0 right-0 z-10 hidden lg:block">
         <div className="max-w-7xl mx-auto px-8 flex justify-between items-end">
           <div className="flex gap-4">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="w-16 h-16 rounded-2xl border-2 border-white/50 overflow-hidden rotate-6 hover:rotate-0 transition-transform relative">
+            {images.map(({id,img,alt}) => (
+              <div key={id} className="w-16 h-16 rounded-2xl border-2 border-white/50 overflow-hidden rotate-6 hover:rotate-0 transition-transform relative">
                 <Image 
-                  src={`https://picsum.photos/seed/beach${i}/200/200`} 
-                  alt="Vibe" 
+                  src={img} 
+                  alt={alt} 
                   fill
                   className="object-cover" 
                 />

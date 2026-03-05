@@ -4,11 +4,12 @@ import Image from "next/image";
 import { motion } from "motion/react";
 
 const highlights = [
-  { label: "Oportunidade", img: "https://picsum.photos/seed/promo/150/150" },
-  { label: "Porções", img: "https://images.unsplash.com/photo-1544124499-58912cbddaad?auto=format&fit=crop&w=150&q=80" },
-  { label: "Chopp", img: "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=150&q=80" },
-  { label: "Drinks", img: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=150&q=80" },
-  { label: "Piscina", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=150&q=80" },
+  { label: "Porções", img: "/porcao.png" },
+  { label: "Chopp", img: "/chopp.png" },
+  { label: "Drinks", img: "/caipirinha-bar.png" },
+  { label: "Piscina", img: "/piscina.png" },
+  { label: "Vôlei", img: "/voley-de-areia.png" },
+  { label: "Futevôlei", img: "/time.png" },
 ];
 
 const Highlights = () => {

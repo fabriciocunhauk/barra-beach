@@ -13,17 +13,17 @@ const modalities = [
   {
     title: "Futevôlei",
     tag: "O Clássico",
-    img: "https://images.unsplash.com/photo-1519766304817-4f37bda74a26?auto=format&fit=crop&w=800&q=80",
+    img: "/campeonato.png",
   },
   {
     title: "Beach Tennis",
     tag: "Sensação",
-    img: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=800&q=80",
+    img: "/time.png",
   },
   {
     title: "Vôlei de Areia",
     tag: "Energia",
-    img: "https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?auto=format&fit=crop&w=800&q=80",
+    img: "/voley-de-areia.png",
   },
 ];
 
