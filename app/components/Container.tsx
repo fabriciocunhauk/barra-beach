@@ -6,6 +6,7 @@ interface ContainerProps {
   element?: keyof JSX.IntrinsicElements;
   classes?: { container?: string };
   size?: "xs" | "sm" | "md" | "lg";
+  className?: string;
 }
 
 const sizeMap: Record<NonNullable<ContainerProps["size"]>, string> = {
@@ -20,11 +21,13 @@ const Container: React.FC<ContainerProps> = ({
   element: Tag = "div",
   classes,
   size = "lg",
+  className: extraClassName,
 }) => {
   const className = classNames(
     "mx-auto py-4 px-10",
     sizeMap[size],
-    classes?.container
+    classes?.container,
+    extraClassName
   );
 
   return <Tag className={className}>{children}</Tag>;

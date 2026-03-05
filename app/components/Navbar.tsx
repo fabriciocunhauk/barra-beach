@@ -1,178 +1,109 @@
 "use client";
+
 import React, { useState } from "react";
-import Image from "next/image";
+import { motion } from "motion/react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
-import { classNames } from "../utils/appearance";
 import Container from "./Container";
 import Button from "./Button";
-import { IoMdClose } from "react-icons/io";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { usePathname } from "next/navigation";
-import barraBeachIcon from "@/public/barra-beach.webp";
-import { useScrollPosition } from "../hooks/useScrollPosition";
 
-type NavbarProps = {
-  classes?: {
-    wrapper?: string;
-    container?: string;
-    button?: string;
-  };
-};
+import Image from "next/image";
 
-type NavigationProps = {
-  id: number;
-  title: string;
-  link: string;
-};
+const WHATSAPP_NUMBER = "5562995081288";
+const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Olá! Gostaria de reservar uma quadra ou saber mais sobre a Barra Beach Arena.`;
 
-type SubNavigationProps = {
-  id: number;
-  title: string;
-  navigation: NavigationProps[];
-};
-
-const mockNavigation: NavigationProps[] = [
-  { id: 1, title: "Home", link: "/" },
-  { id: 2, title: "About", link: "/about" },
-  { id: 3, title: "Services", link: "/services" },
-  { id: 4, title: "Contact", link: "/contact" },
+const navLinks = [
+  { name: "Início", href: "#home" },
+  { name: "Esportes", href: "#modalities" },
+  { name: "Gastrobar", href: "#gastrobar" },
+  { name: "Localização", href: "#location" },
 ];
 
-const mockSubNavigation: SubNavigationProps[] = [
-  {
-    id: 1,
-    title: "More",
-    navigation: [
-      { id: 1, title: "Team", link: "/team" },
-      { id: 2, title: "Careers", link: "/careers" },
-    ],
-  },
-];
-
-const MobileMenu: React.FC<{ navigation: NavigationProps[] }> = ({
-  navigation,
-}) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
-
-  const toggleMenu = () => setIsOpen(!isOpen);
+const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <>
-      <div
-        className={classNames(
-          "hidden",
-          isOpen &&
-            "flex fixed top-0 right-0 bottom-0 left-0 bg-white z-20 w-full h-full overflow-y-scroll"
-        )}
-      >
-        <Container
-          classes={{
-            container: "flex flex-col gap-10 items-end w-full",
-          }}
-        >
-          <Button
-            classes={{
-              button: "w-10 h-10 bg-transparent mt-4",
-            }}
-            onClick={toggleMenu}
-          >
-            <IoMdClose className="text-4xl" />
-          </Button>
-          <Link href="/" className="mx-auto" onClick={toggleMenu}>
-            <Image
-              src={barraBeachIcon.src}
-              width={barraBeachIcon.width}
-              height={barraBeachIcon.height}
-              className="w-20 h-20"
-              alt="Logo"
-            />
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-lg border-b border-beach-ocean/10">
+      <Container size="lg" classes={{ container: "py-0 px-4 sm:px-6 lg:px-8" }}>
+        <div className="flex justify-between items-center h-20">
+          {/* Brand */}
+          <Link href="/" className="flex items-center gap-3">
+            <div className="w-12 h-12 rounded-full shadow-lg overflow-hidden">
+                <Image 
+                  src="/barra-beach-logo.png" 
+                  alt="Barra Beach Arena Logo" 
+                  width={48}
+                  height={48}
+                  className="w-full h-full object-cover"
+                />
+            </div>
+            <div className="flex flex-col leading-none">
+              <span className="text-xl font-black tracking-tighter text-slate-800 uppercase">
+                Barra Beach
+              </span>
+              <span className="text-[10px] font-bold text-beach-sunset tracking-[0.2em] uppercase">
+                Arena & Gastrobar
+              </span>
+            </div>
           </Link>
-          <ul className="flex flex-col text-center gap-10 mx-auto">
-            {navigation.map(({ id, title, link }) => (
-              <li
-                key={id}
-                className={classNames(
-                  "hover:border-b transition-all duration-100 ease-in-out h-8",
-                  pathname.endsWith(link) && "border-b"
-                )}
-                onClick={toggleMenu}
+
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-sm font-bold uppercase tracking-wider text-slate-600 hover:text-beach-sunset transition-colors"
               >
-                <Link href={link}>{title}</Link>
-              </li>
+                {link.name}
+              </a>
             ))}
-          </ul>
-        </Container>
-      </div>
-      <Button
-        classes={{
-          button: "block xl:hidden bg-transparent w-8 h-8",
-        }}
-        onClick={toggleMenu}
-      >
-        <GiHamburgerMenu className="w-5 h-5 m-auto" />
-      </Button>
-    </>
-  );
-};
+            <Button 
+              variant="primary" 
+              size="sm" 
+              link={WHATSAPP_LINK}
+            >
+              Reservar
+            </Button>
+          </nav>
 
-const Navigation: React.FC<{
-  navigation: NavigationProps[];
-  subNavigation: SubNavigationProps[];
-}> = ({ navigation }) => {
-  const pathname = usePathname();
-
-  return (
-    <ul className="hidden xl:flex items-center justify-between gap-10">
-      {navigation.map(({ id, title, link }) => (
-        <li
-          key={id}
-          className={classNames(
-            "hover:border-b transition-all duration-100 ease-in-out h-8",
-            pathname.endsWith(link) && "border-b"
-          )}
-        >
-          <Link href={link}>{title}</Link>
-        </li>
-      ))}
-    </ul>
-  );
-};
-
-const Navbar: React.FC<NavbarProps> = ({ classes }) => {
-  const scrollPosition = useScrollPosition();
-
-  return (
-    <header
-      className={classNames(
-        "fixed transition duration-300 ease-in-out z-10 w-full",
-        classes?.wrapper,
-        scrollPosition > 100 ? "bg-white/20 shadow-md" : "bg-transparent"
-      )}
-    >
-      <Container
-        classes={{
-          container: classNames(
-            " top-0 flex items-center justify-between w-full h-24",
-            classes?.container
-          ),
-        }}
-      >
-        <Link href="/" className="w-40 lg:w-80">
-          <Image
-            src={barraBeachIcon.src}
-            width={barraBeachIcon.width}
-            height={barraBeachIcon.height}
-            className="w-20 h-20"
-            alt="Logo"
-          />
-        </Link>
-        <Navigation
-          navigation={mockNavigation}
-          subNavigation={mockSubNavigation}
-        />
-        <MobileMenu navigation={mockNavigation} />
+          {/* Mobile Menu Toggle */}
+          <button 
+            className="md:hidden p-2 text-slate-600"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
       </Container>
+
+      {/* Mobile Nav */}
+      {isMenuOpen && (
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="md:hidden bg-white border-b border-slate-100 px-4 py-8 flex flex-col gap-4 shadow-2xl"
+        >
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={() => setIsMenuOpen(false)}
+              className="text-xl font-black text-slate-800 px-4 py-3 hover:bg-beach-sand rounded-2xl uppercase tracking-tighter"
+            >
+              {link.name}
+            </a>
+          ))}
+          <Button
+            variant="primary"
+            size="lg"
+            link={WHATSAPP_LINK}
+            className="w-full py-5 mt-4"
+          >
+            Reservar Agora
+          </Button>
+        </motion.div>
+      )}
     </header>
   );
 };

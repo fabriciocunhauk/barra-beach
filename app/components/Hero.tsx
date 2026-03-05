@@ -1,70 +1,80 @@
+"use client";
+
 import React from "react";
-import Image, { StaticImageData } from "next/image";
-import Container from "./Container";
+import { motion } from "motion/react";
+import { ChevronRight } from "lucide-react";
 import Button from "./Button";
-import { classNames } from "../utils/appearance";
 
-type HeroProps = {
-  title: string;
-  subTitle: string;
-  buttonLink: string;
-  buttonTitle: string;
-  image: StaticImageData;
-  classes?: {
-    wrapper?: string;
-    container?: string;
-  };
-};
+const WHATSAPP_NUMBER = "5562995081288";
+const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Olá! Gostaria de reservar uma quadra ou saber mais sobre a Barra Beach Arena.`;
+const INSTAGRAM_HANDLE = "barrabeacharena";
+const INSTAGRAM_LINK = `https://www.instagram.com/${INSTAGRAM_HANDLE}/`;
 
-function Hero({
-  title,
-  subTitle,
-  buttonLink,
-  buttonTitle,
-  image,
-  classes,
-}: HeroProps) {
+const Hero = () => {
   return (
-    <section
-      className={classNames(
-        "relative flex items-center justify-center w-full overflow-hidden py-20",
-        classes?.wrapper
-      )}
-    >
-      {image && (
-        <Image
-          className="absolute inset-0 object-cover w-full h-full brightness-[0.65]"
-          src={image.src}
-          width={image.width}
-          height={image.height}
-          alt="Image"
-          priority={true}
-          loading="eager"
+    <section id="home" className="relative h-[90vh] flex items-center justify-center overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1519766304817-4f37bda74a26?auto=format&fit=crop&w=1920&q=80" 
+          alt="Barra Beach Vibe" 
+          className="w-full h-full object-cover"
+          referrerPolicy="no-referrer"
         />
-      )}
+        <div className="absolute inset-0 bg-gradient-to-t from-beach-sand via-black/40 to-black/60"></div>
+      </div>
 
-      <Container
-        classes={{
-          container: classNames(
-            "grid grid-cols-1 xl:grid-cols-2 place-items-center text-center xl:text-left text-white min-h-[212px] lg:h-[900px]",
-            classes?.container
-          ),
-        }}
-      >
-        <div className="flex flex-col items-center xl:items-start gap-4">
-          <h2 className="text-4xl md:text-5xl font-bold drop-shadow-[0_1px_1px_#2E2E2E]">
-            {title}
-          </h2>
-          <p className="text-lg drop-shadow-[0_1px_1px_#2E2E2E]">{subTitle}</p>
-          {buttonLink && buttonTitle && (
-            <Button link={buttonLink} classes={{ button: "mx-auto md:m-0" }}>
-              {buttonTitle}
+      <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-white mb-6 leading-[0.85] tracking-tighter uppercase italic">
+            Esporte, <br />
+            <span className="text-beach-sunset">Sabor & Sol.</span>
+          </h1>
+          <p className="text-lg md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto font-bold tracking-tight">
+            Quadras de Areia • Piscina Semi Olímpica • Gastrobar Completo • Música ao Vivo
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <Button 
+                link={WHATSAPP_LINK} 
+                variant="primary" 
+                size="lg" 
+                className="w-full sm:w-auto flex items-center justify-center gap-3 px-12 py-6"
+            >
+              Alugar Quadra <ChevronRight size={24} />
             </Button>
-          )}
+            <Button 
+                link="#gastrobar" 
+                variant="ghost" 
+                size="lg" 
+                className="w-full sm:w-auto px-12 py-6"
+            >
+              Conhecer Gastrobar
+            </Button>
+          </div>
+        </motion.div>
+      </div>
+      
+      {/* Social Proof / Instagram Vibe */}
+      <div className="absolute bottom-12 left-0 right-0 z-10 hidden lg:block">
+        <div className="max-w-7xl mx-auto px-8 flex justify-between items-end">
+          <div className="flex gap-4">
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="w-16 h-16 rounded-2xl border-2 border-white/50 overflow-hidden rotate-6 hover:rotate-0 transition-transform">
+                <img src={`https://picsum.photos/seed/beach${i}/200/200`} alt="Vibe" className="w-full h-full object-cover" />
+              </div>
+            ))}
+          </div>
+          <div className="text-white text-right">
+            <p className="text-xs font-black uppercase tracking-[0.3em] opacity-60 mb-2">Siga no Instagram</p>
+            <a href={INSTAGRAM_LINK} target="_blank" rel="noreferrer" className="text-2xl font-black hover:text-beach-sunset transition-colors">@{INSTAGRAM_HANDLE}</a>
+          </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
-}
+};
 
 export default Hero;

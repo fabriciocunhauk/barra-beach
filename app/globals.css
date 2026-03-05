@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+@theme {
+  --color-beach-sand: #fdf6e3;
+  --color-beach-ocean: #0ea5e9;
+  --color-beach-sunset: #f97316;
+  --color-beach-accent: #db2777;
+}
+
+@utility scrollbar-hide {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

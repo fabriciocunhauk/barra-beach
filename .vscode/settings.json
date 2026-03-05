@@ -1,5 +1,6 @@
 {
   "cSpell.words": [
     "barra"
-  ]
+  ],
+  "css.lint.unknownAtRules": "ignore"
 }
