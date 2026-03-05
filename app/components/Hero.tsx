@@ -31,7 +31,7 @@ const Hero = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-white mb-6 leading-[0.85] tracking-tighter uppercase italic">
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-white mb-6 leading-[0.85] tracking-tighter uppercase italic mt-40 lg:mt-0">
             Esporte, <br />
             <span className="text-beach-sunset">Sabor & Sol.</span>
           </h1>
