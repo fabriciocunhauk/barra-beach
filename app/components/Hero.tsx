@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "motion/react";
 import { ChevronRight } from "lucide-react";
+import Image from "next/image";
 import Button from "./Button";
 
 const WHATSAPP_NUMBER = "5562995081288";
@@ -14,11 +15,12 @@ const Hero = () => {
   return (
     <section id="home" className="relative h-[90vh] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <img 
+        <Image 
           src="https://images.unsplash.com/photo-1519766304817-4f37bda74a26?auto=format&fit=crop&w=1920&q=80" 
           alt="Barra Beach Vibe" 
-          className="w-full h-full object-cover"
-          referrerPolicy="no-referrer"
+          fill
+          priority
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-beach-sand via-black/40 to-black/60"></div>
       </div>
@@ -62,8 +64,13 @@ const Hero = () => {
         <div className="max-w-7xl mx-auto px-8 flex justify-between items-end">
           <div className="flex gap-4">
             {[1, 2, 3].map((i) => (
-              <div key={i} className="w-16 h-16 rounded-2xl border-2 border-white/50 overflow-hidden rotate-6 hover:rotate-0 transition-transform">
-                <img src={`https://picsum.photos/seed/beach${i}/200/200`} alt="Vibe" className="w-full h-full object-cover" />
+              <div key={i} className="w-16 h-16 rounded-2xl border-2 border-white/50 overflow-hidden rotate-6 hover:rotate-0 transition-transform relative">
+                <Image 
+                  src={`https://picsum.photos/seed/beach${i}/200/200`} 
+                  alt="Vibe" 
+                  fill
+                  className="object-cover" 
+                />
               </div>
             ))}
           </div>

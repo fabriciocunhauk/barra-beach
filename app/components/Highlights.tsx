@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import Image from "next/image";
 import { motion } from "motion/react";
 
 const highlights = [
@@ -25,8 +25,13 @@ const Highlights = () => {
             className="flex flex-col items-center gap-2 cursor-pointer group"
           >
             <div className="w-20 h-20 md:w-24 md:h-24 rounded-full p-1 border-2 border-beach-sunset group-hover:border-beach-ocean transition-colors">
-              <div className="w-full h-full rounded-full overflow-hidden border-2 border-white">
-                <img src={item.img} alt={item.label} className="w-full h-full object-cover group-hover:scale-110 transition-transform" />
+              <div className="w-full h-full rounded-full overflow-hidden border-2 border-white relative">
+                <Image 
+                  src={item.img} 
+                  alt={item.label} 
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform" 
+                />
               </div>
             </div>
             <span className="text-[10px] md:text-xs font-black uppercase tracking-widest text-slate-600 group-hover:text-beach-sunset transition-colors">

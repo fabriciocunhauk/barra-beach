@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import Image from "next/image";
 import { motion } from "motion/react";
 import { Instagram } from "lucide-react";
 import Container from "./Container";
@@ -48,7 +48,12 @@ const SocialFeed = () => {
               transition={{ delay: idx * 0.05 }}
               className="aspect-square relative group overflow-hidden rounded-2xl md:rounded-[32px] cursor-pointer"
             >
-              <img src={post.img} alt="Instagram Post" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              <Image 
+                src={post.img} 
+                alt="Instagram Post" 
+                fill
+                className="object-cover group-hover:scale-110 transition-transform duration-500" 
+              />
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                 <Instagram className="text-white" size={32} />
               </div>

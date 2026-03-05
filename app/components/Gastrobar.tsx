@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import Image from "next/image";
 import { motion } from "motion/react";
 import { Utensils, Beer, Waves, Music, Clock } from "lucide-react";
 import Container from "./Container";
@@ -61,11 +61,11 @@ const Gastrobar = () => {
                 viewport={{ once: true }}
                 className="space-y-4"
               >
-                <div className="h-72 rounded-[40px] overflow-hidden border-2 border-white/10">
-                  <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=600&q=80" alt="Meat" className="w-full h-full object-cover" />
+                <div className="h-72 rounded-[40px] overflow-hidden border-2 border-white/10 relative">
+                  <Image src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=600&q=80" alt="Meat" fill className="object-cover" />
                 </div>
-                <div className="h-56 rounded-[40px] overflow-hidden border-2 border-white/10">
-                  <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=600&q=80" alt="Beer" className="w-full h-full object-cover" />
+                <div className="h-56 rounded-[40px] overflow-hidden border-2 border-white/10 relative">
+                  <Image src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=600&q=80" alt="Beer" fill className="object-cover" />
                 </div>
               </motion.div>
               <motion.div 
@@ -74,11 +74,11 @@ const Gastrobar = () => {
                 viewport={{ once: true }}
                 className="space-y-4 pt-12"
               >
-                <div className="h-56 rounded-[40px] overflow-hidden border-2 border-white/10">
-                  <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80" alt="Drink" className="w-full h-full object-cover" />
+                <div className="h-56 rounded-[40px] overflow-hidden border-2 border-white/10 relative">
+                  <Image src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80" alt="Drink" fill className="object-cover" />
                 </div>
-                <div className="h-72 rounded-[40px] overflow-hidden border-2 border-white/10">
-                  <img src="https://images.unsplash.com/photo-1544124499-58912cbddaad?auto=format&fit=crop&w=600&q=80" alt="Food" className="w-full h-full object-cover" />
+                <div className="h-72 rounded-[40px] overflow-hidden border-2 border-white/10 relative">
+                  <Image src="https://images.unsplash.com/photo-1544124499-58912cbddaad?auto=format&fit=crop&w=600&q=80" alt="Food" fill className="object-cover" />
                 </div>
               </motion.div>
             </div>

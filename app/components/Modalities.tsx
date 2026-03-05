@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import Image from "next/image";
 import { motion } from "motion/react";
 import Container from "./Container";
 import Card from "./Card";
@@ -46,8 +46,13 @@ const Modalities = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
           >
-            <Card variant="image" className="h-[500px]">
-              <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
+            <Card variant="image" className="h-[500px] relative overflow-hidden group">
+              <Image 
+                src={item.img} 
+                alt={item.title} 
+                fill
+                className="object-cover group-hover:scale-110 transition-transform duration-1000" 
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
               <div className="absolute bottom-10 left-10 right-10">
                 <span className="bg-beach-sunset text-white px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest mb-4 inline-block">
