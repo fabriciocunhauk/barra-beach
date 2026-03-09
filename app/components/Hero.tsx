@@ -6,10 +6,7 @@ import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Button from "./Button";
 
-const WHATSAPP_NUMBER = "62995081288";
-const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Olá! Gostaria de reservar uma quadra ou saber mais sobre a Barra Beach Arena.`;
-const INSTAGRAM_HANDLE = "barrabeacharena";
-const INSTAGRAM_LINK = `https://www.instagram.com/${INSTAGRAM_HANDLE}/`;
+import { WHATSAPP_LINK, INSTAGRAM_HANDLE, INSTAGRAM_LINK } from "@/app/utils/constants";
 
 const images = [
   {id:0, img: "/barra-beach-restaurant.jpeg", alt: "Barra Beach Vibe"},

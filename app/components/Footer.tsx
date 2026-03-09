@@ -12,10 +12,7 @@ import {
 import Image from "next/image";
 import Container from "./Container";
 
-const WHATSAPP_NUMBER = "62995081288";
-const INSTAGRAM_HANDLE = "barrabeacharena";
-const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Olá! Gostaria de reservar uma quadra ou saber mais sobre a Barra Beach Arena.`;
-const INSTAGRAM_LINK = `https://www.instagram.com/${INSTAGRAM_HANDLE}/`;
+import { WHATSAPP_LINK, INSTAGRAM_LINK } from "@/app/utils/constants";
 
 const navLinks = [
   { name: "Início", href: "#home" },

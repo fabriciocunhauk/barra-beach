@@ -5,8 +5,7 @@ import { motion } from "motion/react";
 import { Instagram } from "lucide-react";
 import Container from "./Container";
 
-const INSTAGRAM_HANDLE = "barrabeacharena";
-const INSTAGRAM_LINK = `https://www.instagram.com/${INSTAGRAM_HANDLE}/`;
+import { INSTAGRAM_HANDLE, INSTAGRAM_LINK } from "@/app/utils/constants";
 
 const posts = [
   { img: "/gastrobar.png", type: "sports" },

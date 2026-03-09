@@ -6,8 +6,7 @@ import Container from "./Container";
 import Card from "./Card";
 import Button from "./Button";
 
-const WHATSAPP_NUMBER = "62995081288";
-const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Olá! Gostaria de reservar uma quadra ou saber mais sobre a Barra Beach Arena.`;
+import { WHATSAPP_LINK } from "@/app/utils/constants";
 
 const modalities = [
   {
