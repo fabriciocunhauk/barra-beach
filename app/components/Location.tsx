@@ -5,7 +5,7 @@ import { MapPin, Clock, Phone } from "lucide-react";
 import Container from "./Container";
 import Button from "./Button";
 
-const WHATSAPP_NUMBER = "5562995081288";
+const WHATSAPP_NUMBER = "62995081288";
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Olá! Gostaria de reservar uma quadra ou saber mais sobre a Barra Beach Arena.`;
 
 const Location = () => {

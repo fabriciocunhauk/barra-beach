@@ -6,12 +6,13 @@ import {
   Clock, 
   Phone, 
   Instagram, 
-  MessageCircle 
+  MessageCircle, 
+  MessagesSquare
 } from "lucide-react";
 import Image from "next/image";
 import Container from "./Container";
 
-const WHATSAPP_NUMBER = "5562995081288";
+const WHATSAPP_NUMBER = "62995081288";
 const INSTAGRAM_HANDLE = "barrabeacharena";
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Olá! Gostaria de reservar uma quadra ou saber mais sobre a Barra Beach Arena.`;
 const INSTAGRAM_LINK = `https://www.instagram.com/${INSTAGRAM_HANDLE}/`;
@@ -151,9 +152,9 @@ const Footer = () => {
         href={WHATSAPP_LINK}
         target="_blank"
         rel="noreferrer"
-        className="fixed bottom-8 right-8 z-50 bg-green-500 text-white p-5 rounded-[24px] shadow-2xl hover:scale-110 active:scale-95 transition-all group"
+        className="fixed bottom-8 right-8 z-50 bg-green-500 text-white p-5 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all group"
       >
-        <MessageCircle size={32} />
+        <MessagesSquare size={32} />
         <span className="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-white text-slate-900 px-6 py-3 rounded-2xl text-sm font-black uppercase tracking-widest shadow-2xl opacity-0 group-hover:opacity-100 transition-all whitespace-nowrap pointer-events-none translate-x-4 group-hover:translate-x-0">
           Reservar Agora!
         </span>

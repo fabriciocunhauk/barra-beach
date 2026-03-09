@@ -6,14 +6,14 @@ import Container from "./Container";
 import Card from "./Card";
 import Button from "./Button";
 
-const WHATSAPP_NUMBER = "5562995081288";
+const WHATSAPP_NUMBER = "62995081288";
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Olá! Gostaria de reservar uma quadra ou saber mais sobre a Barra Beach Arena.`;
 
 const modalities = [
   {
     title: "Futevôlei",
     tag: "O Clássico",
-    img: "/campeonato.png",
+    img: "/voley-de-areia.png",
   },
   {
     title: "Beach Tennis",
@@ -23,7 +23,7 @@ const modalities = [
   {
     title: "Vôlei de Areia",
     tag: "Energia",
-    img: "/voley-de-areia.png",
+    img: "/campeonato.png",
   },
 ];
 
